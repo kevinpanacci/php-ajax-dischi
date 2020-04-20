@@ -1,0 +1,15 @@
+header {
+    max-width: 1200px;
+    background-color: $secondary_bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .logo {
+        width: 80%;
+        img {
+            width: 30px;
+            margin-top: 5px;
+            height: auto;
+        }
+    }
+}
