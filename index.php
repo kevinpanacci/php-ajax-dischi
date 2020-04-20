@@ -15,17 +15,18 @@
         </header>
         <main>
             <div class="cards-cta">
-                <div class="card">
                     <?php
                         include 'data.php';
                     ?>
                     <?php  foreach ($songs as $key => $song) { ?>
+                        <div class="card">
                             <img src="<?php echo $song['immagine']; ?>" alt="">
                             <h2> <?php echo $song['titolo'];  ?> </h2>
                             <h3> <?php echo $song['autore'];  ?> </h3>
                             <p> <?php echo $song['anno']; ?> </p>
+                        </div>
                     <?php } ?>
-                </div>
+
             </div>
         </main>
         <script src="dist/js/main.js" charset="utf-8"></script>
