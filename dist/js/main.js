@@ -4,14 +4,19 @@ $(document).ready(function(){
         url: 'server.php',
         method: 'GET',
         success: function(data) {
-            // var ciao = JSON.parse(data); //serve per ordinare il data
-            console.log(data);
-            var faqs = data;
-            for (var i = 0; i < faqs.length; i++) {  //ciclo gli oggetti in data
-                var faq = faqs[i]; //prendo un singolo oggetto
-                $('main .container').append('<h2>' + faq.question + '</h2>' + '<p>' + faq.answer + '</p>'); //aggiungo le domande all'html
-
-
+            var songs = data;
+            var source = $('#card-template').html();
+            var template = Handlebars.compile(source);
+            for (var i = 0; i < songs.length; i++) {  //ciclo gli oggetti in data
+                var song = songs[i]; //prendo un singolo oggetto
+                var songobj = {
+                    titolo: song.titolo,
+                    autore: song.autore,
+                    anno: song.anno,
+                    immagine: song.immagine
+                }
+                var html = template(songobj);
+                $('.cards-cta').append(html);
             }
         },
         error: function (error) {
