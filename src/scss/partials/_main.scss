@@ -5,7 +5,7 @@ main {
     justify-content: center;
     .cards-cta {
         width: 80%;
-        margin-top: 100px;
+        margin: 100px 0;
         @include flex-center;
         justify-content: center;
         flex-wrap: wrap;
